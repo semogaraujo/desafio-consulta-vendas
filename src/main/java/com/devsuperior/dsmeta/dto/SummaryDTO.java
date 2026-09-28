@@ -5,20 +5,19 @@ import com.devsuperior.dsmeta.projections.SellerSaleMinProjection;
 public class SummaryDTO {
 
 	public String sellerName;
-	public Double sum;
+	public Double total;
 
 	public SummaryDTO() {
 	}
 
-	public SummaryDTO(String sellerName, Double sum) {	
+	public SummaryDTO(String sellerName, Double total) {
 		this.sellerName = sellerName;
-		this.sum = sum;
+		this.total = total;
 	}
 
-	public SummaryDTO(SellerSaleMinProjection projection) {       
-		
-		this.sellerName = projection.getSellerName();
-		this.sum = projection.getAmount();
+	public SummaryDTO(SellerSaleMinProjection projection) {
+		sellerName = projection.getSellerName();
+		total = projection.getTotal();
 	}
 
 	public String getSellerName() {
@@ -29,17 +28,12 @@ public class SummaryDTO {
 		this.sellerName = sellerName;
 	}
 
-	public Double getSum() {
-		return sum;
+	public Double getTotal() {
+		return total;
 	}
 
-	public void setSum(Double sum) {
-		this.sum = sum;
-	}
-
-	@Override
-	public String toString() {
-		return "SummaryDTO [sellerName=" + sellerName + ", sum=" + sum + "]";
+	public void setTotal(Double total) {
+		this.total = total;
 	}
 
 }
